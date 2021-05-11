@@ -13,10 +13,10 @@ set -e
 # echo 'www.example.com' > CNAME
 # git init
 git add -A
-git commit -m 'update yml'
+git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
-git push -f git@github.com:Baiyusoup/Baiyusoup.github.io.git master
+git push -f git@github.com:Baiyusoup/sprint.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
