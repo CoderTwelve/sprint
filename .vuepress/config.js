@@ -2,6 +2,7 @@ module.exports = {
   "title": "sprint",
   "description": "面试",
   "dest": "public",
+  "base": "/sprint/",
   "head": [
     [
       "link",
