@@ -23,3 +23,22 @@ Node.js 中的全局对象是 global，所有全局变量（除了 global 本身
 `console` 用于提供控制台标准输出
 
 `process` 用于描述当前nodejs进程状态的对象
+
+## fs模块
+fs模块的api操作基本分为文件操作、目录操作、文件信息、流着几个大方面，编程方面也支持同步、异步和Promise。
+
+常用的有如下：
+- fs.access()检查文件是否存在，以及nodejs是否有权访问
+- fs.appendFile() 追加数据到文件，如果文件不存在，就创建文件
+- fs.copyFile() 拷贝文件
+
+- fs.mkdir() 创建文件夹
+- fs.readdir() 读取目录的内容
+- fs.rmdir() 删除文件夹
+- fs.rename() 重命名文件或文件夹
+
+- fs.readFile() 读取文件
+- fs.open() 设置文件模式
+- fs.close() 关闭文件描述符
+- fs.writeFile() 将数据写入文件
+- fs.watchFile() 监视文件的更改
