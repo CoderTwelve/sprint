@@ -1,6 +1,6 @@
 ---
 home: true
-bgImage: '/banner.jpg'
+bgImage: 'https://uploadstatic.mihoyo.com/contentweb/20210324/2021032415584151925.png'
 bgImageStyle: {
   height: '450px'
 }
