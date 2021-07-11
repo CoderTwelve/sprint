@@ -13,7 +13,7 @@ set -e
 # echo 'www.example.com' > CNAME
 # git init
 git add -A
-git commit -m 'add: doc'
+git commit -m 'update: 目录结构'
 
 # 如果发布到 https://<USERNAME>.github.io
 git push -f git@github.com:Baiyusoup/sprint.git master
