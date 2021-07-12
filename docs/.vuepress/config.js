@@ -1,4 +1,4 @@
-const themeConfig = require('./config/theme/')
+const themeConfig = require('./themeConfig')
 
 module.exports = {
   title: "Autumn Sprint",
@@ -15,8 +15,8 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
-    '@vuepress/medium-zoom',
     'flowchart',
-    "permalink-pinyin"
+    '@vuepress-reco/vuepress-plugin-pagation',
+    'permalink-pinyin'
   ] 
 }  
