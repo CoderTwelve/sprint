@@ -13,3 +13,6 @@ nextTick的作用是在下次DOM更新循环结束之后执行延迟回调，在
 
 ## 原理
 实现的原理是内部使用一个数组保存我们传入的回调函数。然后执行异步延迟函数，判断当前环境支持什么方法来清空那个数组。依次判断Promise.then、MutationObserver、setImmmediate、setTimeout。当事件循环到了微任务或者宏任务，执行函数就会依次执行数组中的回调。
+
+
+promise => MutationObserver => setImmediate => setTimeout
