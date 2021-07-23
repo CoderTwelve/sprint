@@ -5,6 +5,10 @@ categories:
  - HTML
 ---
 
+
+## 选择器
+querySelector和querySelectorAll
+
 ## Canvas
 
 ## 媒体播放

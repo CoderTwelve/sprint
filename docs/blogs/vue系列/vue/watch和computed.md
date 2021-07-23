@@ -8,6 +8,8 @@ categories:
 ## computed
 computed是计算属性的; 它会根据所依赖的数据动态显示新的计算结果, 该计算结果会被缓存起来。computed的值在getter执行后是会被缓存的。如果所依赖的数据发生改变时候, 就会重新调用getter来计算最新的结果。
 
+如果依赖是对象又是怎样？
+
 ### computed与methods的区别
 1. computed 是基于响应性依赖来进行缓存的。只有在响应式依赖发生改变时它们才会重新求值,而methods不是响应式的
 2. computed中的成员可以只定义一个函数作为只读属性, 也可以定义成 get/set变成可读写属性, 但是methods中的成员没有这样的

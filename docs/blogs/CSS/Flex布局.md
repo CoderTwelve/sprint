@@ -13,7 +13,7 @@ flex布局有两根轴线——主轴和交叉轴。主轴由flex-direction定�
 该模型由css属性`display: flex`控制。
 
 ## Flex 容器
-文档中采用了flexbox的预取叫做flex容器。为了创建flex容器，我们把一个容器的display属性值改为flex或者inline-flex。完成这一步之后，容器中的直系子元素就会变为flex元素。所有CSS属性都会有一个初始值，因此flex元素都会有下列行为：
+文档中采用了display:flex/inline-flex的元素叫做flex容器。容器中的直系子元素为flex元素。所有CSS属性都会有一个初始值，因此flex元素都会有下列行为：
 - 元素排列一行（flex-direction默认值为row）
 - 元素从主轴的起始线开始
 - 元素不会在主维度方向拉伸，但是可以缩小
