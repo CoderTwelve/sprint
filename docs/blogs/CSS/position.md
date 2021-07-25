@@ -27,6 +27,8 @@ categories:
 元素的width/height、padding、margin以及使用absolute或fixed定位为的元素的偏移量的百分比值都是根据元素的包含块进行计算的。height、top、bottom的百分比值是通过包含块的height值计算的，而width、left、right、padding、margin的百分比值是通过包含块的width值计算的
 
 ### 确定包含块
+确定一个元素的包含块的过程完全依赖于这个元素的 position 属性:
+
 - 如果设为static、relative或sticky，包含块可能有它**最近的祖先块元素**的**内容区**的边缘组成。
 - 如果设为absolute，包含块就是由它最近的非static的祖先元素的**内边距区**的边缘组成
 - 如果设为fixed，在连续媒体的情况下包含块是**viewport**，在分页媒体下包含块就是**分页区域**
