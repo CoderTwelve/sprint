@@ -12,3 +12,10 @@ categories:
 - freeze 冻结一个对象
 - getPrototypeOf 返回指定对象的原型对象
 - keys 返回一个包含所有给定对象自身可枚举属性名称的数组
+
+
+ForIn枚举一个对象的属性（也包含原型属性）
+
+object.hasOwnProperty() 检测这个属性是来自哪的
+
+delete不会删除原型属性
