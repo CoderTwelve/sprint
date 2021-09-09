@@ -6,7 +6,7 @@ categories:
 ---
 
 ## http
-http是当前网络通信的规范，用来在网络上传输资源。
+http是一个简单的请求-响应协议，它通常运行在TCP之上。它所使用的报文格式基本是开始行、首部行以及报文主体。
 
 特点是
 1. 灵活可扩展，允许传输任意类型的数据
@@ -20,10 +20,11 @@ http是当前网络通信的规范，用来在网络上传输资源。
 3. 队头阻塞
 
 ## https
-https是由http+tsl/ssl组成的。用来解决http安全问题。
+https是由http+tls/ssl组成的。用来解决http安全问题。
 
 https的最主要的作用是
 1. 对数据进行加密，建立一个信息安全通道，来保证传输过程中的数据安全。
 2. 对网站服务器进行真实身份认证。
 
 [GO](https.md)
+[参考资料](https://leetcode-cn.com/circle/discuss/cxn9hV/)

@@ -51,15 +51,26 @@ Function.prototype.myApply = function(ctx, args) {
 bind() 方法创建一个新的函数并返回，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
 ```javascript
 Function.prototype.myBind = function (thatArg, ...args) {
-  const slice = Array.prototype.slice;
-  const thatFunc = this;
-  return function F() {
-    if (thatFunc instanceof F) {
-      // 对于 new 的情况来说，不会被任何方式改变 this，所以对于这种情况我们需要忽略传入的 this
-      return new thatFunc(...args.concat(slice.call(arguments)));
-    }
-    return thatFunc.apply(thatArg, args.concat(slice.call(arguments)))
+  // 参数
+  const baseArgs = Array.prototype.slice.call(arguments, 1)
+  // 调用bind方法的函数本身
+  const fToBind = this
+
+  const fNOP = function () {}
+
+  // 要返回的新函数
+  const fBound = function() {
+
+    return fToBind.apply(
+      // 判断调用bind返回的函数是否是被new调用，如果是的话就用新创建的this代替硬绑定的this
+      this instanceof fNOP ? this : oThis,
+      baseArgs.concat(Array.prototype.slice.call(arguments))
+    )
   }
+  fNOP.prototype = this.prototype
+  fBound.prototype = new fNOP()
+
+  return fBound
 }
 ```
 

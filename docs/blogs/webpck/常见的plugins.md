@@ -1,5 +1,5 @@
 ---
-title: Tree Shaking
+title: 常见的plugins
 date: 2021-07-26
 categories: 
  - webpack
@@ -19,3 +19,7 @@ categories:
 
 
 CleanWebpackPlugin
+
+```javascript
+new CleanWebpackPlugin() // 不需要传参，默认使用output.path
+```

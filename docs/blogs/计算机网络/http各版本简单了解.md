@@ -12,7 +12,7 @@ categories:
 
 请求和响应的格式改变了，除了数据部分，每次通信都必须有头信息。
 
-只使用If-Modified-Since和Expires来控制缓存的生命周期
+只使用Last-Modified和Expires来控制缓存的生命周期
 
 该版本主要的缺点是一个请求需要两倍的往返时间RTT的开销
 
@@ -20,9 +20,10 @@ categories:
 这个版本是目前主流的http协议版本。
 1. 引入了持久连接，即不需要显式声明Connection: keep-alive
 2. 引入了管道机制，即同一个tcp连接里，客户端可以同时发送多个请求。
-3. 新增了一些头字段f-Unmodified-Since, If-Match, If-None-Match来控制缓存的生命周期，比之前的更加精准控制。
-4. 支持断点续传
-5. 新增了一些请求方法。put、options、delete
+3. 新增了一些头字段Cache-Control，If-None-Match，ETag来控制缓存的生命周期，比之前的更加精准控制。
+4. Host头处理
+5. 支持断点续传
+6. 新增了一些请求方法。put、options、delete
 
 出现的问题是传输内容都是明文的；长连接可能会影响性能，因为有时候有些请求完之后就不会再请求；队头阻塞。
 

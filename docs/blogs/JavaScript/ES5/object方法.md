@@ -18,4 +18,10 @@ ForIn枚举一个对象的属性（也包含原型属性）
 
 object.hasOwnProperty() 检测这个属性是来自哪的
 
+prop in obj 判断指定属性是否在指定对象或其原型链上 
+
 delete不会删除原型属性
+
+configurable
+writable
+enumerable

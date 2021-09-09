@@ -50,3 +50,32 @@ class _LazyMan {
   
 }
 ```
+
+```javascript
+class A {
+  constructor() {
+    this.cbs = []
+  }
+  next() {
+    const cbs = this.cbs
+    if (cbs.length > 0) {
+      const cb = cbs.unshift()
+      cb(this.next.bind(this))
+    }
+  }
+
+  log(val) {
+    this.cbs.push(next => {
+      console.log(val)
+      next()
+    })
+    return this
+  },
+  wait(time) {
+    this.cbs.push((next) => {
+      setTimeout(next, time)
+    })
+    return this
+  }
+}
+```

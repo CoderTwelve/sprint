@@ -81,4 +81,31 @@ function foo() {
 }
 ```
 
-我们可以知道，await会产生一个微任务（Promise.then)，这个微任务放进任务队列中的时机是在执行await之后，直接跳出async函数，执行其他代码，其他代码执行完毕后，再回到async函数去执行剩下的代码，然后把await后面的代码注册到微任务队列中，
+```javascript
+function thunk(gFunc) {
+  return new Promise((resolve, reject) => {
+    const g = gFunc();
+    // 执行器函数
+    const step = (nextFunc) => {
+      let next
+      try {
+        next = nextFunc()
+      } catch(e) {
+        reject(e)
+      }
+      // 如果已经执行完
+      if (next.done) return resolve(next.value)
+      
+      // 如果没有执行完，则执行下一个
+      Promise.resolve(next.value).then(res => {
+        step(() => g.next(res))
+      }, rej => {
+        step(() => g.throw(rej))
+      })
+    }
+    step(() => g.next(undefined))
+  })
+}
+```
+
+我们可以知道，await会产生一个微任务（Promise.then)，这个微任务放进任务队列中的时机是在执行await之后，直接跳出async函数，执行其他代码，其他代码执行完毕后，再回到async函数去执行剩下的代码，然后把await后面的代码注册到微任务队列中。
